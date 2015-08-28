@@ -1,0 +1,229 @@
+/* http://www.menucool.com */
+
+/*slider frame* /
+
+#sliderFrame, #sliderFrame div {
+    box-sizing: content-box;
+}
+
+#sliderFrame 
+{
+    box-sizing: content-box;
+    width:920px;
+    margin:0 auto; /*center-aligned* /
+    padding:20px;
+    box-shadow: 0 0 5px #BBB;border:1px solid #CCC; background-color:#FFF;
+}
+*/
+#slider, #slider div.sliderInner {
+    width:640px;height:416px;/* Must be the same size as the slider images */
+}
+
+#slider {
+ 	background:#fff url(loading.gif) no-repeat 50% 50%;
+/*    float:left;
+	position:relative;*/
+    transform: translate3d(0,0,0);
+}
+
+/* the link style (if an image is wrapped in a link) */
+#slider a.imgLink, #slider .video {
+	z-index:2;
+	position:absolute;
+	top:0px;left:0px;border:0;padding:0;margin:0;
+	width:100%;height:100%;
+}
+#slider .video {
+	background:transparent url(video.png) no-repeat 50% 50%;
+}
+
+/* Caption styles */
+#slider div.mc-caption-bg, #slider div.mc-caption-bg2 {
+	background: rgba(168, 126, 12, 0.4);
+
+    position:absolute;
+	width:80%;
+	height:auto;
+	padding:10px 0;/* 10px will increase height.*/
+	left:0px; /*if the caption needs to be aligned from right, specify by right instead of left. i.e. right:20px;*/
+	bottom:10px;/*if the caption needs to be aligned from top, specify by top instead of bottom. i.e. top:150px;*/
+	z-index:3;
+	overflow:hidden;
+	font-size:0;
+}
+
+/*#slider div.mc-caption-bg{
+  position: relative;
+  margin-left: 7px;
+  padding:5px 20px;
+  bottom: 155px;
+  width: 80%;
+  background: rgba(168, 126, 12, 0.4);
+}*/
+#slider div.mc-caption h3{
+  color: #EFEAE8;
+  text-shadow: 1px 1px 0 hsl(43, 90%, 18%);
+}
+#slider div.mc-caption span{
+    font-family: 'DancingScriptRegular', Arial, sans-serif;
+    color: #F2C44E;
+    text-shadow: 1px 1px 0 hsl(43, 90%, 18%);
+}
+#slider div.mc-caption p{
+    color:#F2E9D1;
+}
+
+#slider div.mc-caption-bg {
+    /* NOTE: Its opacity is to be set through the sliderOptions.captionOpacity setting in the js-image-slider.js file.* /
+	background:#DDD;/* or any other colors such as Black, or: background:none; * /
+	border:1px solid white;
+	border-radius: 5px; */
+}
+#slider div.mc-caption-bg2 {
+    background:none;
+}
+#slider div.mc-caption {
+	font-size:13px;
+	color:#069;
+	z-index:4;
+	text-align:left;
+    background:none;
+    padding-left: 8px;
+}
+#slider div.mc-caption a { 
+	color:#060;
+}
+
+
+/* ------ built-in navigation bullets wrapper that is relative to the #slider ------*/
+#slider div.navBulletsWrapper  {
+	display:none;
+}
+
+/* --------- Others ------- */
+
+#slider div.loading 
+{
+    width:100%; height:100%;
+    background:transparent url(loading.gif) no-repeat 50% 50%;
+    filter: alpha(opacity=60);
+    opacity:0.6;
+    position:absolute;
+    left:0;
+    top:0; 
+    z-index:9;
+}
+
+#slider img, #slider>b, #slider a>b {
+	position:absolute; border:none; display:none;
+}
+
+#slider div.sliderInner {
+	overflow:hidden; 
+	-webkit-transform: rotate(0.000001deg);/* fixed the Chrome not crop border-radius bug*/
+	position:absolute; top:0; left:0;
+}
+
+#slider>a, #slider video, #slider audio {display:none;}
+#slider div {-webkit-transform: translate3d(0,0,0);transform: translate3d(0,0,0);}
+
+
+
+/* -- thumbnails -- */
+#thumbs 
+{
+    margin:auto;
+    width:92%;
+    max-height: 320px;
+    font-size:11px;
+    /*border-top:1px solid #CCC;*/
+    color:#fff;
+    overflow: hidden;
+}
+#thumbs .thumb 
+{
+    /*border:1px solid #CCC;
+    border-top:1px solid #FFF;*/
+    padding:11px 8px;
+    margin-bottom: 8px;
+    max-height: 75px;
+    background:rgba(234, 189, 48, 0.4);
+}
+#thumbs .thumb.thumb-on 
+{
+    /*box-shadow: 2px 2px 8px rgb(23,16,8);*/
+}
+#thumbs .thumb .frame
+{
+display: inline-block;
+vertical-align: middle;
+-webkit-transform: translateZ(0);
+transform: translateZ(0);
+box-shadow: 0 0 1px hsla(0, 0%, 0%, 0);
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+-moz-osx-font-smoothing: grayscale;
+position: relative;
+-webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+-webkit-transition-property: transform;
+transition-property: transform;
+}
+#thumbs .thumb .frame:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+#thumbs .thumb .frame:hover{
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+#thumbs .thumb .frame:hover:before{
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+
+#thumbs img{border:1px solid #DDD; cursor:pointer; width:70px; height:44px;}
+
+#thumbs .frame {
+    float:left;
+    background-color: hsl(0, 100%, 100%);
+    border: solid 3px hsl(0, 100%, 100%);
+    -moz-box-shadow: 0 0 10px #AAA;
+    -webkit-box-shadow: 0 0 10px hsl(0, 0%, 67%);
+    box-shadow: 0 0 10px hsl(0, 0%, 67%);
+    -ms-filter: "progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA')";
+    filter: progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA');
+}
+
+/*#thumbs .frame {
+    float:left;
+    padding:2px;
+    border:1px solid #CCC;
+    background:white;
+    box-shadow:0 0 3px #BBB;
+    font-size:0;
+    line-height:0;
+}*/
+#thumbs .thumb-content {float:left;width:70%;padding-left:12px;}
+
+/* Captions in #thumbs .thumb-content */
+#thumbs .thumb-content p { font-size: 13px; font-weight:bold; margin:0 0 3px;padding:0;}
+

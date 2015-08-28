@@ -1,0 +1,105 @@
+.album_entry{ margin-bottom: 20px;  min-height:100px; }
+
+.album_entry .frame img{ width:155px; }
+.team_entry .frame,
+.album_entry .frame
+{
+  float:left;
+  cursor:pointer;
+  background-color: hsl(0, 100%, 100%);
+  border: solid 4px hsl(0, 100%, 100%);
+  -moz-box-shadow: 0 0 10px #AAA;
+  -webkit-box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA')";
+  filter: progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA');
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+.album_entry .frame:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition: transform 0.3s, opacity 0.3s;
+  transition-property: transform 0.3s, opacity 0.3s;
+}
+
+.album_entry .frame:hover{
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: none;
+  /* move the element up by 5px */
+}
+.album_entry .frame:hover:before{
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+}
+
+.album_entry .meta{
+	opacity: 0;
+	position: absolute;
+	bottom: 4px;
+	width: 100%;
+	left:-15px;
+	color:#fff;
+	font-size:12px;
+	text-align: center;
+	background: rgba(168, 126, 12, 0.4);
+	-webkit-transition: left 1s, opacity 1s;
+	transition: left 1s, opacity 1s;
+}
+.album_entry .frame:hover .meta{
+   left:0;
+   opacity: 1;
+}
+.album_entry i{
+	opacity: 0;
+	position: absolute;
+	left: 47px;
+	top: 0px;
+	border: solid 0.04em #FCF9F9;
+	border-radius: .2em;
+	color: #fff;
+	padding-left:10px;
+	padding-right:6px;
+	-webkit-transition: top 0.7s, opacity 0.3s;
+	transition: top 0.7s, opacity 0.3s;
+}
+.album_entry .frame:hover i{
+	opacity: 1;
+	top:15px;
+}
+.album_entry .silhouette{
+	opacity: 0;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	right:0;
+	background: rgba(0,0,0,0.3);
+	-webkit-transition: width 0.7s, opacity 0.3s;
+	transition: width 0.7s, opacity 0.3s;
+}
+.album_entry .frame:hover .silhouette{
+	opacity: 1;
+	width:100%;
+}

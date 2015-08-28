@@ -1,0 +1,191 @@
+.profile_entry{ margin-bottom: 12px;  min-height:100px; }
+.profile_entry .frame{ width:100%; height:100%;}
+.profile_data{ padding:10px 20px; }
+.profile_data div{ width: 35%; height:30px; display:inline-block; }
+.profile_data div.rcol{ width: 65%; float:right;}
+
+.team_entry .frame,
+.profile_entry .frame
+{
+  float:left;
+  cursor:pointer;
+  background-color: hsl(0, 100%, 100%);
+  border: solid 4px hsl(0, 100%, 100%);
+  -moz-box-shadow: 0 0 10px #AAA;
+  -webkit-box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA')";
+  filter: progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA');
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+.profile_entry .frame:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition: transform 0.3s, opacity 0.3s;
+  transition-property: transform 0.3s, opacity 0.3s;
+}
+
+.profile_entry .frame:hover{
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  box-shadow: none;
+  /* move the element up by 5px */
+}
+.profile_entry .frame:hover:before{
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+}
+.profile_entry .view-icon a{ 
+	color:#fff; 
+	border: solid 1px #FCF9F9;
+	border-radius: .3em;
+	padding:10px;
+}
+.profile_entry .view-icon a:hover{ text-decoration:none; }
+.profile_entry .view-icon{
+	opacity: 0;
+	position: absolute;
+	text-align:center; 
+	margin:auto; 
+	width: 100%;
+	top: 0px;
+	color: #fff;
+	-webkit-transition: top 0.7s, opacity 0.3s;
+	transition: top 0.7s, opacity 0.3s;
+}
+.profile_entry .frame:hover .view-icon{
+	opacity: 1;
+	top:30px;
+}
+.profile_entry .silhouette{
+	opacity: 0;
+	width: 0;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+	right:0;
+	background: rgba(0,0,0,0.3);
+	-webkit-transition: width 0.7s, opacity 0.3s;
+	transition: width 0.7s, opacity 0.3s;
+}
+.profile_entry .frame:hover .silhouette{
+	opacity: 1;
+	width:100%;
+}
+
+/* pagination */
+.gallery-pagenav,
+.profile-pagenav {
+	position:relative;
+	text-align: center;
+	text-shadow: 1px 1px 0 hsl(0, 100%, 100%);
+	font-size: 13px;
+	color: hsl(0, 0%, 30%);
+	padding-top: 7px;
+}
+.gallery-pagenav:before,
+.gallery-pagenav:after,
+.profile-pagenav:before,
+.profile-pagenav:after{
+  content: '';
+  position: absolute;
+  left:32%;
+  bottom: -1px;
+  height: 2px;
+  width: 500px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZcAAAACCAYAAACUupFJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOtJREFUeNrsllEOhCAMRAE9iPe/lKfYL4UuJmXzdoJm948PmjQozLSlRMa477uFadOmjWqleqqeqy/VzT1gfOISd8VZB9kTzf7oA/mxE6tgr/aQi329q6F0ehjAyVLDKXkz5g3OnBnYxjvBy6gjd3DZR64XmT+ccwKjz+SYcxTH+AfeX6jrU++6bdv8fKdNG1NU2gVqPqolxy246EzWeZGO9iPZ6o8/iEx64N3hQqcnrVdJ1hePaSJK7L8KA+swCE3snEuCaHCvUfIYhKvFJCaiviJ7ip34diOiJn0pIrx6Hia5e/39EvK3AAMAgNyPGDNHXN4AAAAASUVORK5CYII=') no-repeat;
+}
+.gallery-pagenav:before,
+.profile-pagenav:before{
+	top:5px;
+}
+.gallery-pagenav .pages,
+.profile-pagenav .pages {
+border: none;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+box-shadow: none;
+padding-left: 0;
+background: none;
+ }
+ .gallery-pagenav span, #left-area .gallery-pagenav a,
+ .profile-pagenav span, #left-area .profile-pagenav a {
+border-color: hsl(0, 0%, 90%);
+background: hsl(0, 0%, 98%);
+color: hsl(0, 0%, 30%);
+-moz-box-shadow: inset 0 0 0 1px #fff;
+-webkit-box-shadow: inset 0 0 0 1px hsl(0, 100%, 100%);
+box-shadow: inset 0 0 0 1px hsl(0, 100%, 100%);
+padding: 11px 14px;
+display: inline-block;
+}
+.gallery-pagenav a,
+.profile-pagenav a {
+	margin-right: 10px;
+	color: hsl(0, 0%, 30%);
+	padding: 11px 14px;
+	display: inline-block;
+}
+.gallery-pagenav a:hover,
+.profile-pagenav a:hover{
+	text-decoration:none;
+}
+.gallery-pagenav span,
+.profile-pagenav span {
+text-decoration: none;
+border: 1px solid hsl(0, 0%, 75%);
+padding: 3px 5px;
+margin: 2px;
+}
+
+/* profile view */
+#profile_view .frame img{ width: 260px; }
+#team_profile .frame,
+#profile_view .frame{
+  position:relative;
+  float:left;
+  cursor:pointer;
+  background-color: hsl(0, 100%, 100%);
+  border: solid 4px hsl(0, 100%, 100%);
+  -moz-box-shadow: 0 0 10px #AAA;
+  -webkit-box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  box-shadow: 0 0 10px hsl(0, 0%, 67%);
+  -ms-filter: "progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA')";
+  filter: progid: DXImageTransform.Microsoft.Shadow(Strength=4, Direction=130, Color='#AAAAAA');
+}
+#profile_view h1.title {
+text-shadow: 1px 1px 0 hsl(0, 100%, 100%);
+color: #555555;
+font-size: 36px;
+margin-bottom: 4px;
+padding-bottom: 5px;
+color: #808080;
+letter-spacing: -1px;
+line-height: 1em;
+font-weight: normal;
+}
+#profile_view h1.title span{
+	font-family: 'DancingScriptRegular', Arial, sans-serif;
+	font-size:25px;
+}

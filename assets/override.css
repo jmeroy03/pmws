@@ -1,0 +1,132 @@
+/* common override */
+#header-area{ margin-right: -1px; }
+#sliding-img-area .row,
+#sliding-img-area .row,
+main .row,
+footer .row{
+	padding-left:30px;
+	padding-right:30px;
+}
+#team_profile .profile_wrapper,
+#scientist_profile .profile_wrapper,
+#gallery .gallery_wrapper{ padding-top:20px; max-height: 455px; overflow: hidden; }
+#gallery .gallery_wrapper { max-height:525px;}
+#about_us,
+#contact_us,
+#team_profile,
+#scientist_profile,
+#profile_view,
+#featured,
+#gallery{ padding-left:75px; padding-right:75px; }
+
+#team_profile h1.title,
+#scientist_profile h1.title,
+#gallery h1.title,
+#team_profile h1.title,
+#scientist_profile h1.title{
+	font-size: 36px;
+	margin-bottom: 4px;
+	text-align: center;
+	background: url(img/elems/title-bg.png) no-repeat center bottom;
+	padding-bottom: 19px;
+}
+
+/* responsive override */
+.slider-switcher{
+	padding-left:0px !important;
+    margin-left: -35px;
+	/*padding-right:0px !important;*/
+}
+#sliding-img-area .row{
+	margin-bottom:10px;
+	margin-top: 30px;
+}
+.img-thumbnail {
+border: 1px solid #ddd;
+border-radius: 0;
+}
+
+@media (max-width: 1200px){
+ .switcher-wrapper { height:385px; }
+ .featured-title{
+  padding-top:4px;
+  padding-bottom:0px;
+ }
+ #thumbs .thumb-content{ width: 68% !important; }
+ #slider, #slider div.sliderInner { width: 562px !important; height:366px !important; }
+ .slider-switcher{ margin-left:0;}
+}
+@media (max-width: 992px){
+  .switcher-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 52%;
+    height: 80px;
+    margin: auto;
+    background: none;
+  }
+  h2.sidebar-title {
+	display: none;
+  }
+  #slider, #slider div.sliderInner { width: 639px !important; }
+  #thumbs { height:80px; padding-top: 5px; position: absolute; top:0; width: 1000px !important; }
+  #thumbs .thumb{ padding: 0 !important; width: 76px; height: 44px; float: left; margin-left: 10px; }
+  #thumbs .thumb-content{ display: none;}
+  .featured-img{ margin-bottom: 25px; }
+  .arrows{ display: block; }
+}
+
+/* scroll style */
+.ps-scrollbar-y-rail { width: 3px !important; margin: 0 2px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); }
+.ps-scrollbar-y{ width: 3px !important; -webkit-box-shadow: inset 0 0 6px rgba(190, 171, 87, 1); }
+
+/* profile view override */
+#profile_view .profile_img,
+.profile_info{ padding-left:0;} 
+
+#profile_view h3,
+#profile_view h4{ margin:5px;}
+
+#profile_view .profile_info .row{ padding-left: 0; }
+#profile_view .profile_info small { text-shadow: 1px 1px 0 hsl(0, 100%, 100%); }
+
+/* tabs */
+#profileTab .tab-content{ margin-top:20px;}
+/* list style */
+#expertise ul { padding-left:40px; }
+#expertise li { margin-bottom:10px; float:none; font-size:17px; text-shadow: 1px 1px 0 hsl(0, 100%, 100%); }
+#expertise li:before {    
+    font-family: 'FontAwesome';
+    content: '\f101';
+    margin:0 5px 0 -15px;
+}
+/* team */
+#team_profile .profile_panel{
+	box-shadow: 1px 1px 1px #ADADAD;
+	border-radius: 5px;
+	max-height: 285px;
+	padding: 20px;
+	position: relative;
+	height: 100%;
+	border: 1px solid #e5e5e5;
+	background-color: #fff;
+}
+#team_profile img{ 
+	max-height: 185px; 
+	max-width:120px; 
+	height:100%; 
+	width: 100% 
+}
+/* contact us */
+#contact_us ul { padding-left:20px; }
+#contact_us li { margin-bottom:10px; float:none; font-size:15px; text-shadow: 1px 1px 0 hsl(0, 100%, 100%); }
+#contact_us li:before {    
+    font-family: 'FontAwesome';
+    margin:0 5px 0 -15px;
+}
+#contact_us li:first-child:before { content: '\f015'; }
+#contact_us li:nth-child(2):before { content:'\f041';}
+#contact_us li:nth-child(3):before { content:'\f095';}
+#contact_us li:nth-child(4):before { content:'\f0e0';}
+/* about us */
+#about_us .paragraph{ text-indent: 40px; text-align:justify; padding:30px 20px; }

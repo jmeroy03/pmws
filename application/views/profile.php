@@ -62,9 +62,7 @@
     <div class="profile_wrapper col-md-12"> 
      
       
-<?php foreach ($asset_url as $file) echo  
-
-    ' <div class="profile_entry col-md-6">
+<?php foreach ($asset_url as $file) echo ' <div class="profile_entry col-md-6">
         <div class="frame">
           <div class="profile_data">
             <div><h4><small>ID:</small></h4></div>
@@ -79,9 +77,7 @@
               </a>
             </div>
         </div>
-      </div>'
-
-      ?>
+      </div>' ?>
 
      <!--  <table border="1">  
         <tbody>  
@@ -100,10 +96,7 @@
          </tr>  
         
         </tbody>   
-      </table>   -->
-     
-     
-     
+      </table>   -->  
 
    
 </div>

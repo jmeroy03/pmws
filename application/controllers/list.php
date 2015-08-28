@@ -4,7 +4,7 @@
 		public function index()
 		{
 
-			$this
+		
 
 			$this->load->database();
 			$this->load->model('select');

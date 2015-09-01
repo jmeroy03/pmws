@@ -61,6 +61,9 @@
     <h1 class="title">Scientist <span>Profile</span></h1>
     <div class="profile_wrapper col-md-12"> 
 
+       
+        
+
         <div class="profile_entry col-md-6">
             <div class="frame">
                 <div class="profile_data">
@@ -77,27 +80,9 @@
                 </div>
             </div>
         </div>
+  
+
      
-   
-
-     <!--   <table border="1">  
-        <tbody>  
-         <tr>  
-            <td>Last Name</td>  
-            <td>First Name</td> 
-            <?php //foreach ($h -> result() as $row)  
-         {  
-            ?><tr>  
-            <td><?php //echo $row->sci_last_name;?></td>  
-            <td><?php //echo $row->sci_first_name;?></td>  
-            </tr>  
-         <?php }  
-         ?>   
-         </tr>  
-        
-        </tbody>   
-      </table>   -->
-
    
 </div>
 </div>

@@ -33,22 +33,8 @@
         'plugins/input-mask/jquery.inputmask.js',
         'plugins/input-mask/jquery.inputmask.date.extensions.js',
         'plugins/input-mask/jquery.inputmask.extensions.js',
-        'i18n/defaults-*.min.js',
-        'custom_js/custom_ck_editor.js',
-        'custom_js/custom_datemask.js',
-        'custom_js/custom_radiocheck.js',
-        'custom_js/custom_script_authorityentries.js',
-        'custom_js/custom_script_nonfilingcharacter.js',
-        'custom_js/custom_script_nonfilingcharacter2.js',
-        'custom_js/custom_typeofinfoprovided_script.js',
-        'custom_js/custom_typeofinfoprovided_script2.js',
-        'custom_js/custom_subjectaccess_script.js',
-        'custom_js/custom_collapsable_script.js',
-        'custom_js/custom_datepicker_script.js',
-        'custom_js/custom_toggle_script.js',
-        'custom_js/custom_bootstrapselect_script.js',
-        'custom_js/custom_responsivetab_script.js',
-        'plugins/datatables/jquery.dataTables.js',
+        'i18n/defaults-*.min.js'
+       
        
     );
 ?>  
@@ -62,7 +48,24 @@
     <div class="profile_wrapper col-md-12"> 
 
        
-        
+
+ <?php foreach ($asset_url as $file) echo
+        '<div class="profile_entry col-md-6">
+            <div class="frame">
+                <div class="profile_data">
+                    <div><h4><small>ID:</small></h4></div>
+                    <div class="rcol"><h4><small>Name: </small></h4></div>
+                    <div><h4><small>PMWS Volume:</small></h4></div>
+                    <div class="rcol"><h4><small>Last Updated:</small></h4></div>
+                </div>
+                <div class="silhouette"></div>
+                <div class="view-icon">
+                    <a href="<?=base_url()?>profile_view">view profile
+                        <i class="fa fa-external-link" data-url="<?= base_url() ?>profile_view" title="view_information"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <div class="profile_entry col-md-6">
             <div class="frame">
@@ -80,6 +83,19 @@
                 </div>
             </div>
         </div>
+
+
+
+        '
+
+        
+
+
+
+
+
+
+         ?>
   
 
      

@@ -1,4 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
 class Main extends CI_Controller {
 private $g_arrData;
 public function __construct() 

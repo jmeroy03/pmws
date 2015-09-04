@@ -14,7 +14,8 @@ public function index()
     $this->template->load('template/main', 'home',$this->g_arrData);
 }
 
-public function view(){
+public function view()
+{
 	$module = $this->uri->segment(1);
     $this->template->set('module', $module); 
     $this->template->load('template/main', $module,$this->g_arrData);

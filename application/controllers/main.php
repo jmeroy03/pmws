@@ -1,4 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
 class Main extends CI_Controller {
 private $g_arrData;
 public function __construct() 
@@ -12,7 +14,8 @@ public function index()
     $this->template->load('template/main', 'home',$this->g_arrData);
 }
 
-public function view(){
+public function view()
+{
 	$module = $this->uri->segment(1);
     $this->template->set('module', $module);
 

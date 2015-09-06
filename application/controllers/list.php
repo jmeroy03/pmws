@@ -9,7 +9,7 @@
 			$this->load->database();
 			$this->load->model('select');
 			$data['h']=$this->select->select();
-			$this->load-.view('profile', $data);
+			$this->load->view('profile', $data);
 
 		}
 

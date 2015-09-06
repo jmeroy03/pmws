@@ -14,8 +14,12 @@ public function index()
 
 public function view(){
 	$module = $this->uri->segment(1);
-    $this->template->set('module', $module); 
-    $this->template->load('template/main', $module,$this->g_arrData);
+    $this->template->set('module', $module);
+
+    $this->load->model('select');
+    $this->g_arrData['data']=$this->select->select();
+
+    $this->template->load('template/main', $module, $this->g_arrData);
 }
 
 }

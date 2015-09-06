@@ -2,12 +2,12 @@
 <div class="row">
   <div class="col-md-12 clear">
      <div class="profile_img col-xs-4 col-md-4">
-      <div class="frame shadow"><img src="assets/img/slider-img/thumb/thumb1.jpg" /></div>
+      <div class="frame shadow"><img src="<?php echo base_url(); ?>assets/img/slider-img/thumb/thumb1.jpg" /></div>
      </div>     
      <div class="profile_info col-xs-8 col-md-8">
       <div class="row">
-       <div><h3><small>Scientist Name: </small>Padolina, William G.</h3></div>
-       <div><h3><small>Scientist ID:</small> 000001</h3></div>
+       <div><h3><small>Scientist Name: </small><?php echo $data->sci_last . ", " . $data->sci_first; ?></h3></div>
+       <div><h3><small>Scientist ID:</small><?php echo $data->SCI_ID; ?></h3></div>
        <div><h3><small>Gender:</small> Male</h3></div>
        <div><h4><small>Date Created:</small> 2001-06-26</h4></div>
        <div><h4><small>Date Updated:</small>2015-01-13</h4></div> 
@@ -41,7 +41,16 @@
             <div role="tabpanel" class="tab-pane fade" id="education">
 			 <?php $this->load->view('profile/education');?>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="employment">...</div>
+            <div role="tabpanel" class="tab-pane fade" id="employment">
+              <?php 
+                foreach($data_emp->result() as $row){
+                  echo "Institution: ". $row->I_ID . "<br>";
+                  echo "Position: ". $row->Position . "<br>";
+                  echo "Start Date: ". $row->StartDate . "<br>";
+                  echo "End Date: ". $row->EndDate . "<br><br>";
+                }
+              ?>
+            </div>
           </div>
           <!-- end Tab panes -->
         </div><!-- end tabpanel -->

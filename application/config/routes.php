@@ -38,8 +38,8 @@
 |
 */
 
-$route['default_controller'] = "main";
-$route['home'] = "main/view/home";
+$route['default_controller'] = "home";
+/*$route['home'] = "main/view/home";
 $route['profile'] = "main/view/profile";
 $route['profile_view'] = "main/view/profile_view";
 $route['gallery'] = "main/view/gallery";
@@ -47,6 +47,7 @@ $route['featured'] = "main/view/featured";
 $route['team'] = "main/view/team";
 $route['contact'] = "main/view/contact";
 $route['about'] = "main/view/about";
+*/
 $route['404_override'] = '';
 
 

@@ -7,20 +7,20 @@
 		}
 		public function select()
 		{
-			//$query = $this->db->get('tblscientist');
-			$query = $this->db->query("SELECT * FROM tblscientist LIMIT 4");
+
+			$query = $this->db->query("SELECT * FROM tblscientist LIMIT 8");
 			return $query;
+			
 		}
+
+		
 
 		public function view($id){
-			$query = $this->db->query("SELECT * FROM tblscientist a, tblscipicinfo b WHERE a.SCI_ID = $id AND a.SCI_ID = b.SCI_ID");
+			$query = $this->db->query("SELECT a.SCI_ID, a.sci_last, a.sci_first, a.gender, a.date_created, a.last_updated, b.picname, b.picsize, b.pictype FROM tblscientist a LEFT JOIN tblscipicinfo b ON a.SCI_ID = b.SCI_ID WHERE a.SCI_ID = $id");
 			return $query;
 		}
 
-		public function get_picture($id){
-			$query = $this->db->query("SELECT * FROM tblscipicinfo WHERE SCI_ID = $id");
-			return $query;
-		}
+		
 	}
 
 ?>

@@ -1,74 +1,24 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-    
-
-    $asset_url = array(
-        'popup_/jquery-1.9.1.js',
-        'popup_/nhpup_1.1.js',
-        'bootstrap-tabcollapse/lib/js/jquery-1.10.1.min.js',
-        'bootstrap-3.3.4/dist/js/bootstrap.js',
-        'bootstrap-tabcollapse/lib/js/bootstrap.js',
-        'bootstrap-tabcollapse/bootstrap-tabcollapse.js',
-        'silviomoreto-bootstrap-select/dist/js/bootstrap-select.js'
-    );
-
-    $js_url = array(
-        'jquery.min.js',
-        'jquery-1.11.3.min.js',
-        'jquery-1.7.2.js',
-        'jquery-ui-1.10.3.min.js',
-        'bootstrap.min.js',
-        'moment.js',
-        'custom_js/custom_datetime_script.js',
-        'raphael-min.js',
-        'plugins/morris/morris.min.js',
-        'plugins/sparkline/jquery.sparkline.min.js',
-        'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
-        'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
-        'plugins/jqueryKnob/jquery.knob.js',
-        'plugins/daterangepicker/daterangepicker.js',
-        'plugins/datepicker/bootstrap-datepicker.js',
-        'plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js',
-        'plugins/ckeditor/ckeditor.js',
-        'plugins/iCheck/icheck.min.js',
-        'plugins/input-mask/jquery.inputmask.js',
-        'plugins/input-mask/jquery.inputmask.date.extensions.js',
-        'plugins/input-mask/jquery.inputmask.extensions.js',
-        'i18n/defaults-*.min.js',
-        'custom_js/custom_ck_editor.js',
-        'custom_js/custom_datemask.js',
-        'custom_js/custom_radiocheck.js',
-        'custom_js/custom_script_authorityentries.js',
-        'custom_js/custom_script_nonfilingcharacter.js',
-        'custom_js/custom_script_nonfilingcharacter2.js',
-        'custom_js/custom_typeofinfoprovided_script.js',
-        'custom_js/custom_typeofinfoprovided_script2.js',
-        'custom_js/custom_subjectaccess_script.js',
-        'custom_js/custom_collapsable_script.js',
-        'custom_js/custom_datepicker_script.js',
-        'custom_js/custom_toggle_script.js',
-        'custom_js/custom_bootstrapselect_script.js',
-        'custom_js/custom_responsivetab_script.js',
-        'plugins/datatables/jquery.dataTables.js',
-       
-    );
-?>  
-   
-
-
-
 <div id="profile_view">
 <div class="row">
   <div class="col-md-12 clear">
      <div class="profile_img col-xs-4 col-md-4">
-      <div class="frame shadow"><img src="<?php echo base_url(); ?>assets/img/slider-img/thumb/thumb1.jpg" /></div>
+      <?php
+        $picture = ""; 
+        if($data->picname==null||$data->picname==""){ 
+          $picture = "default.jpg"; 
+        }else{
+          $picture = $data->picname;
+        }
+      ?>
+      <div class="frame shadow"><img src="<?php echo base_url()."pictures/". $picture; ?>" /></div>
      </div>     
      <div class="profile_info col-xs-8 col-md-8">
       <div class="row">
        <div><h3><small>Scientist Name: </small><?php echo $data->sci_last . ", " . $data->sci_first; ?></h3></div>
        <div><h3><small>Scientist ID:</small><?php echo $data->SCI_ID; ?></h3></div>
-       <div><h3><small>Gender:</small> Male</h3></div>
-       <div><h4><small>Date Created:</small> 2001-06-26</h4></div>
-       <div><h4><small>Date Updated:</small>2015-01-13</h4></div> 
+       <div><h3><small>Gender:</small><?php echo $data->gender; ?></h3></div>
+       <div><h4><small>Date Created:</small><?php echo $data->date_created; ?></h4></div>
+       <div><h4><small>Date Updated:</small><?php echo $data->last_updated; ?></h4></div> 
       </div> 
      </div>
   </div>
@@ -87,18 +37,41 @@
             <li><a href="#award" role="tab" data-toggle="tab">Award</a></li>
             <li><a href="#affiliation" role="tab" data-toggle="tab">Affiliation</a></li>
             <li><a href="#publication" role="tab" data-toggle="tab">Publication</a></li>
-            <li><a href="#research" role="tab" data-toggle="tab">Research</a></li>
+            <!-- <li><a href="research" role="tab" data-toggle="tab">Research</a></li> -->
             <li><a href="#papers" role="tab" data-toggle="tab">Papers</a></li>
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="expertise">
-			 <?php $this->load->view('profile/expertise');?>
+              <ul>
+                  <li>             
+            <?php 
+                foreach($data_exp->result() as $row){
+                 echo  " ". $row->D_Name .  "<br>";      
+                }
+              ?>
+
+
+            </li>
+          </ul>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="education">
-			 <?php $this->load->view('profile/education');?>
+
+            <div role="tabpanel" class="tab-pane fade" id = "education">
+			         <?php
+                  foreach($data_edu->result() as $row){
+                  echo "University: " . $row->univ . "<br>";
+                  echo "Address: " .$row->addr . "<br>";
+                  echo "Degree: " .$row->degree . "<br>";
+                  echo "Date Finished: " .$row->datefin . "<br><br>";
+              
+                 }
+               ?>
+
+
             </div>
+
+
             <div role="tabpanel" class="tab-pane fade" id="employment">
               <?php 
                 foreach($data_emp->result() as $row){
@@ -109,6 +82,88 @@
                 }
               ?>
             </div>
+            <div role="tabpanel" class="tab-pane fade" id="association">
+              <?php 
+                foreach($data_ass->result() as $row){
+                  echo "Association: ". $row->association . "<br>";
+                  echo "Position: ". $row->position . "<br>";
+                  echo "Start Date: ". $row->startdate . "<br>";
+                  echo "End Date: ". $row->enddate . "<br><br>";
+                }
+              ?>
+             
+            </div>
+
+             <div role="tabpanel" class="tab-pane fade" id="training">
+              <?php 
+                foreach($data_train->result() as $row){
+                  echo "Course: ". $row->Course . "<br>";
+                  echo "Start Date: ". $row->StartDate . "<br>";
+                  echo "End Date ". $row->EndDate . "<br>";
+                  echo "Place ". $row->Place . "<br><br>";
+
+                }
+              ?>
+             
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="award">
+              <?php 
+                foreach($data_award->result() as $row){
+                  echo "Award: ". $row->Awdname . "<br>";
+                  echo "Acronym: ". $row->Acronym . "<br>";
+                  echo "Date: ". $row->AwdDate . "<br><br>";
+                }
+              ?>
+             
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="affiliation">
+              <?php 
+                foreach($data_affil->result() as $row){
+                  echo "Position: ". $row->Position . "<br>";
+                  echo "Office: ". $row->Office . "<br>";
+                  echo "Address: ". $row->Address . "<br>";
+                  echo "Telephone: ". $row->TelNo . "<br>";
+                  echo "Fax No.: ". $row->FaxNo . "<br>";
+                  echo "Email: ". $row->Email . "<br><br>";
+                }
+              ?>
+            </div>
+
+             <div role="tabpanel" class="tab-pane fade" id="publication">
+              <?php 
+                foreach($data_pub->result() as $row){
+                  echo "Article: ". $row->Article . "<br>";
+                  echo "Co Author: ". $row->CoAuthor . "<br>";
+                  echo "Publication: ". $row->Publication . "<br>";
+                  echo "Date Published: ". $row->PubDate . "<br>";
+                  echo "Volume No.: ". $row->VolNo . "<br>";
+                  echo "Issue No.: ". $row->IssueNo . "<br>";
+                  echo "Pages: ". $row->Pagination . "<br><br>";
+                  
+                }
+              ?>
+            </div>
+
+            
+
+
+           <div role="tabpanel" class="tab-pane fade" id="papers">
+              <?php 
+                foreach($data_paper->result() as $row){
+                 echo "Title: ". $row->title . "<br>";
+                  echo "Presented: ". $row->presented_at . "<br>";
+                  echo "Year Presented: ". $row->year_presented . "<br>";
+                  echo "Pages ". $row->pagination . "<br><br>";
+
+                  
+                }
+              ?>
+            </div>
+            
+
+
           </div>
           <!-- end Tab panes -->
         </div><!-- end tabpanel -->

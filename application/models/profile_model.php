@@ -8,7 +8,7 @@
 		public function select()
 		{
 
-			$query = $this->db->query("SELECT * FROM tblscientist LIMIT 8");
+			$query = $this->db->query("SELECT * FROM tblscientist ");
 			return $query;
 			
 		}

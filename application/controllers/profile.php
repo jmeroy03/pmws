@@ -5,28 +5,21 @@ class Profile extends CI_Controller {
 	private $page = "profile";
 	private $offset;
 	
-	public function index($offset = 0){	
-		$this->template->set('module', $this->page,$offset);
+	public function index(){	
+		$this->template->set('module', $this->page);
+
+		$this->load->model('profile_model');
 
 		//pagination
 		$this->load->library('pagination');
-		$config['base_url'] = '/pmws/profile/';
-		// $config['first_link'] = 'First';
-		// $config['last_link'] = 'Last';
-		// $config['total_rows'] = count($this->profile_model->select());
-		$config['total_rows'] = 200;
+		$config['base_url'] = base_url(). 'profile/index';
+		$config['total_rows'] = $this->profile_model->count_all();
 		$config['per_page'] = 8;
+		$config["uri_segment"] = 3;
 		$this->pagination->initialize($config);
-		// $data['result']=$this->profile_model->findLimit(2, $index);
-		// $data['link'] = $this->pagination->create_links();
 
-
-
-		$this->load->model('profile_model');
-		//$data['result'] = $this->profile_model->select($config['per_page'], $offset);
-    	$this->g_arrData['data']=$this->profile_model->select();
-
-
+		$set = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $this->g_arrData['data'] = $this->profile_model->select($config["per_page"], $set);
 
 	    $this->template->load('template/main', $this->page, $this->g_arrData);
 	}

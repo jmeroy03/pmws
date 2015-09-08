@@ -63,9 +63,6 @@ class Profile extends CI_Controller {
 		$this->load->model('paper_model');
 		$this->g_arrData['data_paper']=$this->paper_model->view_paper($id);
 
-
-
-
 		$this->template->load('template/main', "profile_view", $this->g_arrData);	
 	}
 

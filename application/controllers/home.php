@@ -6,9 +6,23 @@ class Home extends CI_Controller {
 
 	public function index(){	
             $this->template->set('module', $this->page); 
-	    $this->template->load('template/main', $this->page, $this->g_arrData);
-            $this->load->model('home_model');
+	    $this->load->model('home_model');
             
+            $this->template->load('template/main', $this->page, $this->g_arrData);
+          
+ 
 	}
+        
+        public function view(){
+            
+            $this->template->load('module',"home");
+            
+            $this->load->model('home_model');
+            $data = $this->home_model->view();
+            foreach ($data->result()as $row){
+                $this->g_arrData['data'] = $row;
+                
+            }
+        }
 
 }

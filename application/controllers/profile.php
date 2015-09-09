@@ -33,11 +33,11 @@ class Profile extends CI_Controller {
     		$this->g_arrData['data'] = $row;
     	}
 
-    	$this->load->model('expertise_model');
-    	$this->g_arrData['data_exp']=$this->expertise_model->view_expertise($id);
+                $this->load->model('expertise_model');
+                $this->g_arrData['data_exp']=$this->expertise_model->view_expertise($id);
 
-    	$this->load->model('education_model');
-    	$this->g_arrData['data_edu']=$this->education_model->view_education($id);
+                $this->load->model('education_model');
+                $this->g_arrData['data_edu']=$this->education_model->view_education($id);
 
 		$this->load->model('employment_model');
 		$this->g_arrData['data_emp']=$this->employment_model->view_employment($id);
@@ -57,6 +57,7 @@ class Profile extends CI_Controller {
 		$this->load->model('publication_model');
 		$this->g_arrData['data_pub']=$this->publication_model->view_publication($id);
 
+        //research table must have sci_id to access the  table..
 	//	$this->load->model('research_model');
 	//	$this->g_arrData['data_res']=$this->research_model->view_research($id);
 

@@ -19,17 +19,17 @@ class Profile extends CI_Controller {
 		$this->pagination->initialize($config);
 
 		$set = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $this->g_arrData['data'] = $this->profile_model->select($config["per_page"], $set);
+                $this->g_arrData['data'] = $this->profile_model->select($config["per_page"], $set);
 
-	    $this->template->load('template/main', $this->page, $this->g_arrData);
+                $this->template->load('template/main', $this->page, $this->g_arrData);
 	}
 
 	public function view($id){
 		$this->template->set('module', "profile_view");
 
 		$this->load->model('profile_model');
-    	$data = $this->profile_model->view($id);
-    	foreach($data->result() as $row){
+                $data = $this->profile_model->view($id);
+                foreach($data->result() as $row){
     		$this->g_arrData['data'] = $row;
     	}
 

@@ -5,8 +5,10 @@ class Home extends CI_Controller {
 	private $page = "home";
 
 	public function index(){	
-		$this->template->set('module', $this->page); 
+            $this->template->set('module', $this->page); 
 	    $this->template->load('template/main', $this->page, $this->g_arrData);
+            $this->load->model('home_model');
+            
 	}
 
 }

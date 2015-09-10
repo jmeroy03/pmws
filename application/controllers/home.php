@@ -13,7 +13,7 @@ class Home extends CI_Controller {
  
 	}
         
-        public function view(){
+        public function view($id){
             
             $this->template->load('module',"home");
             
@@ -23,6 +23,10 @@ class Home extends CI_Controller {
                 $this->g_arrData['data'] = $row;
                 
             }
+            
+            $this->load->model('rightnav_model');
+            $this->g_arrData['data_right']=  $this->rightnav_model->view_scientist($id);
+            
         }
 
 }

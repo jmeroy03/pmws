@@ -8,7 +8,7 @@
         
         public function viewlist()
         {
-            $query = $this->db-get('scientist');
+            $query = $this->db-query("SELECT ");
             return query;
         }
         

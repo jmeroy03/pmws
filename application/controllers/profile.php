@@ -57,9 +57,9 @@ class Profile extends CI_Controller {
 		$this->load->model('publication_model');
 		$this->g_arrData['data_pub']=$this->publication_model->view_publication($id);
 
-        //research table must have sci_id to access the  table..
-	//	$this->load->model('research_model');
-	//	$this->g_arrData['data_res']=$this->research_model->view_research($id);
+                //research table must have sci_id to access the  table..
+                //$this->load->model('research_model');
+                //$this->g_arrData['data_res']=$this->research_model->view_research($id);
 
 		$this->load->model('paper_model');
 		$this->g_arrData['data_paper']=$this->paper_model->view_paper($id);

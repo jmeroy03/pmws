@@ -7,7 +7,7 @@
 		}
 
 		public function view_research($id){
-			$query = $this->db->query("SELECT * FROM tblsearchsubj WHERE SCI_ID = $id");
+			$query = $this->db->query("SELECT * FROM tblscirnd WHERE SCI_ID = $id");
 			return $query;
 		}
 	}

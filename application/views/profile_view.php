@@ -37,7 +37,7 @@
             <li><a href="#award" role="tab" data-toggle="tab">Award</a></li>
             <li><a href="#affiliation" role="tab" data-toggle="tab">Affiliation</a></li>
             <li><a href="#publication" role="tab" data-toggle="tab">Publication</a></li>
-            <!-- <li><a href="research" role="tab" data-toggle="tab">Research</a></li> -->
+            <li><a href="research" role="tab" data-toggle="tab">Research</a></li> 
             <li><a href="#papers" role="tab" data-toggle="tab">Papers</a></li>
           </ul>
 
@@ -146,7 +146,18 @@
               ?>
             </div>
 
-            
+            <div role="tabpanel" class="tab-pane fade" id="research">
+              <?php 
+                foreach($data_res->result() as $row){
+                 echo "Title: ". $row->ResTitle . "<br>";
+                  //echo "Presented: ". $row->presented_at . "<br>";
+                  //echo "Year Presented: ". $row->year_presented . "<br>";
+                  echo "Status: ". $row->ResStat . "<br><br>";
+
+                  
+                }
+              ?>
+            </div>
 
 
            <div role="tabpanel" class="tab-pane fade" id="papers">

@@ -7,7 +7,7 @@
             <img src="assets/img/slider-img/gallery02.jpg" alt="#caption" />
             <img src="assets/img/slider-img/gallery03.jpg" alt="#caption" />
             <img src="assets/img/slider-img/gallery04.jpg" alt="#caption" />
-			<img src="assets/img/slider-img/gallery05.jpg" alt="#caption" />
+            <img src="assets/img/slider-img/gallery05.jpg" alt="#caption" />
             <img src="assets/img/slider-img/gallery06.jpg" alt="#caption" />
             <img src="assets/img/slider-img/gallery05.jpg" alt="#caption" />
             <img src="assets/img/slider-img/gallery06.jpg" alt="#caption" />

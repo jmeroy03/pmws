@@ -14,7 +14,7 @@
            </div>
         </div>
         <div style="display: none;">
-            <div id="caption">
+            <div id="caption"> 
                 <h3>Yumul Jr., Graciano P.</h3>
       	<span class=""><h4>The vet, dreamer and gardener</h4></span>
       	<p>Etiam risus nisi, molestie in ultricies sit amet, tempus accumsan nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus...</p>

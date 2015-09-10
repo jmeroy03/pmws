@@ -4,7 +4,7 @@
         <div role="tabpanel">
 
           <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist" id="myTab">
+          <ul class="nav nav-tabs" role="tablist" id="myTab"> 
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><h4 class="title">Popular <span>Articles</span></h4></a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h4 class="title">Recent <span>Articles</span></h4></a></li>
             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><h4 class="title">New <span>Articles</span></h4></a></li>

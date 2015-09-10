@@ -4,6 +4,7 @@ class Profile extends CI_Controller {
 	private $g_arrData;
 	private $page = "profile";
 	private $offset;
+        
 	
 	public function index(){	
 		$this->template->set('module', $this->page);

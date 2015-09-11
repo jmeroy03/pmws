@@ -23,52 +23,26 @@
     </div>
 
     <div class="slider-switcher col-md-4">
-      <div class="switcher-wrapper">
+           <div class="switcher-wrapper">
         <h2 class="sidebar-title">Heart of a <span>Beautiful Mind</span></h2>
        <!--thumbnails-->
-        <div id="thumbs">
+          <div id="thumbs">
+
+ <?php foreach ($data->result() as $rows) echo'
+
             <div class="thumb"> 
                 <div class="frame"><img src="assets/img/slider-img/thumb/thumb1.jpg" /></div>
-                <div class="thumb-content"><p>Yumul Jr., Graciano P.</p>Geochemistry and Environmental Geology</div>
+                <div class="thumb-content"><p>'.$row->s.'.</p>Geochemistry and Environmental Geology</div>
                 <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb2.jpg" /></div>
-                <div class="thumb-content"><p>Customizable</p>Thumbnail style is customizable</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb3.jpg" /></div>
-                <div class="thumb-content"><p>Variety of Layouts</p>Just a CSS tweak.</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb4.jpg" /></div>
-                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb4.jpg" /></div>
-                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb4.jpg" /></div>
-                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb4.jpg" /></div>
-                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
-                <div style="clear:both;"></div>
-            </div>
-            <div class="thumb">
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb4.jpg" /></div>
-                <div class="thumb-content"><p>Integration</p>Built-in functions for the thumbnails</div>
-                <div style="clear:both;"></div>
-            </div>
-        </div>    
+            </div>';
+            ?>
+            
+          </div>
+
+
       </div>
+
+
 	  <div class="arrows">
 	   <a class="previous"></a>
 	   <a class="next"></a>

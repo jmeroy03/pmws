@@ -5,28 +5,29 @@ class Home extends CI_Controller {
 	private $page = "home";
 
 	public function index(){	
-            $this->template->set('module', $this->page); 
+        $this->template->set('module', $this->page); 
 	    $this->load->model('home_model');
-            
-            $this->template->load('template/main', $this->page, $this->g_arrData);
+         
+        $this->template->load('template/main', $this->page, $this->g_arrData);
           
  
 	}
         
-        public function view($id){
-            
+        public function viewlist(){
+            $this->template->set('module', "home");
+
             $this->template->load('module',"home");
             
             $this->load->model('home_model');
-            $data = $this->home_model->view();
-            foreach ($data->result()as $row){
+            $data = $this->home_model->viewlist();
+            foreach ($data->result() as $row){
                 $this->g_arrData['data'] = $row;
                 
-            }
-            
-            $this->load->model('rightnav_model');
-            $this->g_arrData['data_right']=  $this->rightnav_model->view_scientist($id);
-            
+            }  
+
+            $this->template->load('template/main',"home",$this->g_arrData);          
         }
+
+           
 
 }

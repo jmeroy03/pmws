@@ -6,12 +6,13 @@
             $this->load->database();
         }
         
-        public function viewlist($limit, $start)
+        public function viewlist()
         {
-            $this->db->limit($limit, $start);
-            $query = $this->db-get("scientist");
+        
+
+            $query = $this->db->query("SELECT s_name FROM scientist");
             if ($query->num_rows() > 0)
-                return query;
+                return $query;
             return false;
         }
 

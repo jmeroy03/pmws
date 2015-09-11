@@ -54,7 +54,7 @@ $scripts = array(
   </div><!-- end banner -->
  </div><!-- end row -->
 </div><!-- end header-area--> 
-<?php if($module == 'home') echo $this->load->view('template/slider.php');?>	 
+<?php if($module == 'home') echo $this->load->view('template/slider.php',$data);?>	 
  <main class="container"><?= $contents ?></main>
  <?php echo $this->load->view('template/footer.php');?>
 

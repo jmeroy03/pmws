@@ -8,18 +8,39 @@
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><h4 class="title">Popular <span>Articles</span></h4></a></li>
             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><h4 class="title">Recent <span>Articles</span></h4></a></li>
             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><h4 class="title">New <span>Articles</span></h4></a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><h4 class="title">Getting to <span>Know</span></h4></a></li>
+            <!--  <li role="presentation"><a href="#chos" aria-controls="messages" role="tab" data-toggle="tab"><h4 class="title">Getting to <span>Know</span></h4></a></li>-->
           </ul>
 
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
-              Nullam justo neque, malesuada vel rhoncus nec, pellentesque at velit. Sed dignissim fringilla adipiscing. Integer consectetur, velit vitae imperdiet venenatis, libero nibh aliquam lacus, a vestibulum nulla metus in justo. Donec ipsum libero, euismod et euismod ut, fringilla.Cras aliquam. Maecenas mi. Sed lacus arcu, malesuada id, ultricies et, ornare non, dolor. Maecenas turpis lacus, vehicula nec, blandit in, laoreet a, nibh. Donec aliquet. In et leo tincidunt tortor rhoncus convallis. Nulla facilisi. Praesent bibendum semper eros. Morbi risus. Nam tellus leo, ullamcorper egestas, venenatis quis, viverra ac, mauris. In hac habitasse platea dictumst. Curabitur at velit vel sem auctor hendrerit. Integer mauris orci, vehicula eu, feugiat ac, hendrerit ut, dolor. Fusce elit nulla, gravida quis, vulputate eu, rutrum vel, lectus. Integer cursus luctus nisl. Quisque quam. Aliquam lectus urna, porta in, viverra eu, pellentesque a, massa. Etiam eros0 sapien, porta et, aliquam et, bibendum sit amet, erat. Sed condimentum interdum lacus. In ut ante non felis tincidunt porta. Aenean aliquet ornare sem. Nunc dignissim, erat sit amet vulputate cursus, elit magna facilisis massa, quis hendrerit nunc odio id dui. Proin interdum dictum arcu. Pellentesque erat ante ultricies ac porttitor ac dictum.
+              <?php 
+              foreach ($data_article->result() as  $row ){
+                echo " ".$row->content. "<br>" ;
+              }
+
+              ?>  
             </div>
+            
             <div role="tabpanel" class="tab-pane" id="profile">
-              Ut vitae magna eget purus viverra interdum. Donec elit augue, pulvinar at, sagittis id, rutrum a, felis. Ut sit amet neque. Vivamus sollicitudin libero at lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam sit amet pede in augue 
+             <?php 
+              foreach ($data_articlerecent->result() as  $row ){
+                echo " ".$row->abstract. "<br>" ;
+              }
+
+              ?>   
             </div>
-            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+               <?php 
+              foreach ($data_articlenews->result() as  $row ){
+                echo " ".$row->content. "<br>" ;
+              }
+
+              ?>   
+            </div>
+           
+
+
           </div>
           <!-- end Tab panes -->
         </div><!-- end tabpanel -->

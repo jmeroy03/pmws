@@ -12,7 +12,7 @@ class Profile extends CI_Controller {
 		$this->load->model('profile_model');
 
 		//pagination
-		$this->load->library('pagination');
+		$this->load->library('pagination'); 
 		$config['base_url'] = base_url(). 'profile/index';
 		$config['total_rows'] = $this->profile_model->count_all();
 		$config['per_page'] = 8;

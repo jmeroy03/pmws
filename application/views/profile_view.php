@@ -21,7 +21,7 @@
        <div><h4><small>Date Updated:</small><?php echo $data->last_updated; ?></h4></div> 
       </div> 
      </div>
-  </div>
+  </div> 
 </div>
 <div class="row">
    <div class="col-md-12 panel">

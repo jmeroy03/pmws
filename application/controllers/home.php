@@ -13,9 +13,23 @@ class Home extends CI_Controller {
             foreach ($data->result() as $row){
                 $this->g_arrData['data'] = $row;
             }
+
+
+            $this->load->model('article_model');
+            $this->g_arrData['data_article']=$this->article_model->view_article();
+
+            $this->load->model('articlerecent_model');
+            $this->g_arrData['data_articlerecent']=$this->articlerecent_model->view_articlerecent();
+
+            $this->load->model('articlenews_model');
+            $this->g_arrData['data_articlenews']=$this->articlenews_model->view_articlenews();
+
          
         $this->template->load('template/main', $this->page, $this->g_arrData);
           
-    }
+
+        }
+
+
 	}
 

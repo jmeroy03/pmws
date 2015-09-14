@@ -10,9 +10,9 @@
         {
         
 
-            $query = $this->db->query("SELECT s_name FROM scientist");
+            $query = $this->db->query("SELECT * FROM scientist");
             if ($query->num_rows() > 0)
-                return $query;
+                return $query->result_array();
             return false;
         }
 

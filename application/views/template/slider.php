@@ -28,19 +28,29 @@
        
        <!--thumbnails-->
 
+       <?php for ($i=0; $i < count($data_scientist); $i++) {
 
-          <!-- <div id="thumbs">
+
+        ?>
+
+       
+
+       <div id="thumbs">
            <div class="thumb"> 
-                <div class="frame"><img src="assets/img/slider-img/thumb/thumb1.jpg" /></div>
-                <div class="thumb-content"><p>'.$row->s.'.</p>Geochemistry and Environmental Geology</div>
+                <div class="frame"><img src="<?php echo base_url()?>assets/img/slider-img/thumb/<?php echo $data_scientist[$i]["profile_pic"]?>" /></div>
+                <div class="thumb-content"><p>'.$row->s.name'.</p>Geochemistry and Environmental Geology</div>
                 <div style="clear:both;"></div>
             </div>  
-          </div> -->
- <?php 
-if(is_array($data)) 
-      echo "Pasok!"; 
+        </div> 
+
+      
+ 
+
+ <?php }
+/*if(is_array($data_scientist)) 
+      print_r ($data_scientist); 
 else 
-      echo "Di pasok!" ;
+      echo "Di pasok!" ;*
  ?>
              
          

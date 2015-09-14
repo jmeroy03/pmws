@@ -9,23 +9,21 @@ class Home extends CI_Controller {
 	    $this->load->model('home_model');
 
 //          $this->load->model('home_model');
-            $data = $this->home_model->viewlist();
-            foreach ($data->result() as $row){
-                $this->g_arrData['data'] = $row;
-            }
+            $data['data_scientist'] = $this->home_model->viewlist();
+            /**/
 
 
-            $this->load->model('article_model');
+            /*$this->load->model('article_model');
             $this->g_arrData['data_article']=$this->article_model->view_article();
 
             $this->load->model('articlerecent_model');
             $this->g_arrData['data_articlerecent']=$this->articlerecent_model->view_articlerecent();
 
             $this->load->model('articlenews_model');
-            $this->g_arrData['data_articlenews']=$this->articlenews_model->view_articlenews();
+            $this->g_arrData['data_articlenews']=$this->articlenews_model->view_articlenews();*/
 
          
-        $this->template->load('template/main', $this->page, $this->g_arrData);
+        $this->template->load('template/main', $this->page,$data);
           
 
         }

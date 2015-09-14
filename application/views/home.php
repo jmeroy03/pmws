@@ -14,29 +14,14 @@
           <!-- Tab panes -->
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="home">
-              <?php 
-              foreach ($data_article->result() as  $row ){
-                echo " ".$row->content. "<br>" ;
-              }
-
-              ?>  
+              
             </div>
             
             <div role="tabpanel" class="tab-pane" id="profile">
-             <?php 
-              foreach ($data_articlerecent->result() as  $row ){
-                echo " ".$row->abstract. "<br>" ;
-              }
-
-              ?>   
+             
             </div>
             <div role="tabpanel" class="tab-pane" id="messages">
-               <?php 
-              foreach ($data_articlenews->result() as  $row ){
-                echo " ".$row->content. "<br>" ;
-              }
-
-              ?>   
+              
             </div>
            
 

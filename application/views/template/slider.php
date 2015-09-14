@@ -47,22 +47,4 @@
  
 
  <?php }
-/*if(is_array($data_scientist)) 
-      print_r ($data_scientist); 
-else 
-      echo "Di pasok!" ;*
- ?>
-             
-         
 
-
-      </div>
-
-
-	  <div class="arrows">
-	   <a class="previous"></a>
-	   <a class="next"></a>
-	  </div>
-    </div>
- </div>
-</div>

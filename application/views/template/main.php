@@ -56,12 +56,7 @@ $scripts = array(
 </div><!-- end header-area--> 
 <?php if($module == 'home') echo $this->load->view('template/slider.php');?>	 
  <main class="container"><?= $contents ?></main>
- <?php 
-if(is_array($data)) 
-      echo "Array"; 
-else 
-      echo "Not";
- ?>
+
  <?php echo $this->load->view('template/footer.php');?>
 
 <?php foreach ($scripts as $file) echo '<script type="text/javascript" src="'.base_url().'assets/'.($file)."\"></script>\n" ?>

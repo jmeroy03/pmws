@@ -35,7 +35,7 @@
        <div id="thumbs">
            <div class="thumb"> 
                 <div class="frame"><img src="<?php echo base_url()?>assets/img/slider-img/thumb/<?php echo $data_scientist[$i]["profile_pic"]?>" /></div>
-                <div class="thumb-content"><p><?php echo $data_scientist[$i]["Fullname"]?> </p>Geochemistry and Environmental Geology</div>
+                <div class="thumb-content"><p><?php echo $data_scientist[$i]["Fullname"]?> </p><?php echo $data_scientist[$i]["s_name"]?></div>
                 <div style="clear:both;"></div>
             </div>  
         </div> 
